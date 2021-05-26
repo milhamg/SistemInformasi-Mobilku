@@ -30,10 +30,21 @@
  
    <!-- Template Main CSS File -->
    <link href="{{ asset('/tampilan-home/assets/css/style.css') }}" rel="stylesheet">
+
+   <!-- Header -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="{{ asset('/tampilan-header/css/bootstrap.min.css') }}">
+		<link type="text/css" rel="stylesheet" href="{{ asset('/tampilan-header/css/slick.css') }}">
+		<link type="text/css" rel="stylesheet" href="{{ asset('/tampilan-header/css/slick-theme.css') }}">
+		<link type="text/css" rel="stylesheet" href="{{ asset('/tampilan-header/css/nouislider.min.css') }}">
+		<link rel="stylesheet" href="{{ asset('/tampilan-header/css/font-awesome.min.css') }}">
+		<link type="text/css" rel="stylesheet" href="{{ asset('/tampilan-header/css/style.css') }}">
   
 </head>
 <body>
   
+
+
 
  <!-- ======= Hero Section ======= -->
  <section id="hero">
@@ -95,19 +106,92 @@
     </div>
   </div>
 </section><!-- End Hero -->
-    <br>
+<br>
+
+
+<!-- HEADER -->
+<header>
+			<!-- MAIN HEADER -->
+			<div id="header">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<!-- LOGO -->
+						<div class="col-md-3">
+							<div class="header-logo">
+								<a href="#" class="logo">
+									<img src="./img/logo.png" alt="">
+								</a>
+							</div>
+						</div>
+						<!-- /LOGO -->
+
+						<!-- SEARCH BAR -->
+						<div class="col-md-6">
+							<div class="search">
+								<form>
+									<!-- <select class="input-select">
+										<option value="0">Semua Kategori</option>
+										<option value="1">Jeep</option>
+										<option value="1">Off-road</option>
+									</select> -->
+                  <div class="input-group mb-3">
+                    <input wire:model="search" type="text" class="form-control" placeholder="Search.." aria-label="Search" ariadescribedby="basic-addon1">
+                  </div>
+                  <div class="input-group mb-3">
+                    <input wire:model="min" type="text" class="form-control" placeholder="Harga min.." aria-label="Harga min" ariadescribedby="basic-addon1">
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <input wire:model="max" type="text" class="form-control" placeholder="Harga max.." aria-label="Harga max" ariadescribedby="basic-addon1">
+                  </div>
+                  <!-- <input wire:model="search" class="input" placeholder="Search here">
+									<button class="search-btn">Search</button> -->
+								</form>
+							</div>
+						</div>
+						<!-- /SEARCH BAR -->
+
+						<!-- ACCOUNT -->
+            @if(Auth::user())
+              @if(Auth::user()->level == 1)
+              <div class="col-md-3 clearfix">
+							<div class="header-ctn">
+								<div>
+									<a href="#">
+										<i class="fa fa-plus-circle"></i>
+                    <a href="{{ url('TambahProduk/') }}">Tambah Produk</a>
+                    <!-- <div class="qty">2</div> -->
+									</a>
+								</div>
+              <div class="col-md-3">
+                  
+              </div>
+              @endif
+          @endif
+						
+							</div>
+						</div>
+						<!-- /ACCOUNT -->
+					</div>
+					<!-- row -->
+				</div>
+				<!-- container -->
+			</div>
+			<!-- /MAIN HEADER -->
+		</header>
+    
+    <!-- END HEADER -->
+
+
 
 </br>
 <div class="container">
-    @if(Auth::user())
-        @if(Auth::user()->level == 1)
-        <div class="col-md-3">
-            <a href="{{ url('TambahProduk/') }}" class="btn btn-success btn-block">Tambah Produk</a>
-        </div>
-        @endif
-    @endif
+    
     <br>
-    <div class="row">
+
+    <!-- <div class="row">
         <div class="col-md-6">
             <div class="input-group mb-3">
                 <input wire:model="search" type="text" class="form-control" placeholder="Search.." aria-label="Search" ariadescribedby="basic-addon1">
@@ -121,7 +205,7 @@
                 <input wire:model="max" type="text" class="form-control" placeholder="Harga max.." aria-label="Harga max" ariadescribedby="basic-addon1">
             </div>
         </div>
-    </div>
+    </div> -->
 
     <section class="products mb-5">
         <div class="row mt-4">
@@ -131,7 +215,7 @@
                 <div class="card">
 
                     <div class="card-body text-center">
-                    <img src="{{ asset('storage/photos/'.$product->gambar) }}" width="200px" height="270px">
+                    <img src="{{ asset('./storage/photos/'.$product->gambar) }}" width="200px" height="270px">
                         <div class="row mt-2">
                             <div class="col-md-12">
                             <h5><strong>{{ $product->nama }}</strong></h5>
@@ -166,13 +250,22 @@
   <div class="credits">
   </div>
 </div>
-</footer><!-- End Footer -->
+</footer>
+<!-- End Footer -->
 <!-- jQuery -->
 <script src="{{asset('asset/plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{asset('asset/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('asset/dist/js/adminlte.min.js')}}"></script>
+
+<!-- JS for Header -->
+<script src="{{ asset('/tampilan-header/js/jquery.min.js') }}"></script>
+<script src="{{ asset('/tampilan-header/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('/tampilan-header/js/slick.min.js') }}"></script>
+<script src="{{ asset('/tampilan-header/js/nouislider.min.js') }}"></script>
+<script src="{{ asset('/tampilan-header/js/jquery.zoom.min.js') }}"></script>
+<script src="{{ asset('/tampilan-header/js/main.js') }}"></script>
 
 </body>
 </html>
