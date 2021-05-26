@@ -1,10 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+<!DOCTYPE html>
+<div class="container">    
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Register</title>
+ 
+</head>
+<body class="hold-transition signup-page">
+<div class="signup-box">
+  <!-- /.signup-logo -->
+  <div class="card">
+    <div class="card-body -card-body">
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
@@ -26,7 +36,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -72,6 +82,15 @@
                 </div>
             </div>
         </div>
-    </div>
+    
 </div>
+<!-- jQuery -->
+<script src="{{asset('asset/plugins/jquery/jquery.min.js')}}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{asset('asset/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{asset('asset/dist/js/adminlte.min.js')}}"></script>
+
+</body>
+</html>
 @endsection

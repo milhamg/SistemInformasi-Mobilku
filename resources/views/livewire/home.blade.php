@@ -1,3 +1,103 @@
+@extends('layouts.app')
+
+@section('content')
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+  <title>Dealerku</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+   <!-- Favicons -->
+   <link href="{{ asset('/tampilan-home/assets/img/umi.png') }}" rel="icon">
+   <link href="{{ asset('/tampilan-home/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+ 
+   <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+ 
+   <!-- Vendor CSS Files -->
+   <link href="{{ asset('/tampilan-home/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+   <link href="{{ asset('/tampilan-home/assets/vendor/icofont/icofont.min.css') }}" rel="stylesheet">
+   <link href="{{ asset('/tampilan-home/assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+   <link href="{{ asset('/tampilan-home/assets/vendor/animate.css/animate.min.css') }}" rel="stylesheet">
+   <link href="{{ asset('/tampilan-home/assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+   <link href="{{ asset('/tampilan-home/assets/vendor/venobox/venobox.css') }}" rel="stylesheet">
+   <link href="{{ asset('/tampilan-home/assets/vendor/owl.carousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+ 
+   <!-- Template Main CSS File -->
+   <link href="{{ asset('/tampilan-home/assets/css/style.css') }}" rel="stylesheet">
+  
+</head>
+<body>
+  
+
+ <!-- ======= Hero Section ======= -->
+ <section id="hero">
+  <div class="hero-container">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+
+      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+      <div class="carousel-inner" role="listbox">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="carousel-background"><img src="{{ asset('/tampilan-home/assets/img/slide/edit1.png') }} " alt=""></div>
+          <div class="carousel-container">
+            <div class="carousel-content">
+              <h2 class="animated fadeInDown"> <br><span>MOBILKU</span></h2>
+              <p class="animated fadeInUp"></p>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="carousel-background"><img src="{{ asset('/tampilan-home/assets/img/slide/edit2.png') }} " alt=""></div>
+          <div class="carousel-container">
+            <div class="carousel-content">
+              {{-- <h2 class="animated fadeInDown">Lorem Ipsum Dolor</h2>
+              <p class="animated fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p> --}}
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="carousel-background"><img src="tampilan-home/assets/img/slide/edit3.png " alt=""></div>
+          <div class="carousel-container">
+            <div class="carousel-content">
+              {{-- <h2 class="animated fadeInDown">Sequi ea ut et est quaerat</h2>
+              <p class="animated fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p> --}}
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon ri-arrow-left-line" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon ri-arrow-right-line" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+
+    </div>
+  </div>
+</section><!-- End Hero -->
+    <br>
+
+</br>
 <div class="container">
     @if(Auth::user())
         @if(Auth::user()->level == 1)
@@ -54,3 +154,27 @@
     </section>
 
 </div>
+<!-- ======= Footer ======= -->
+<footer id="footer">
+<div class="footer-top">
+  <div class="container">
+
+<div class="container">
+  <div class="copyright">
+    &copy; 2021 Mobilku <strong><span>Indramayu</span></strong>.
+  </div>
+  <div class="credits">
+  </div>
+</div>
+</footer><!-- End Footer -->
+<!-- jQuery -->
+<script src="{{asset('asset/plugins/jquery/jquery.min.js')}}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{asset('asset/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{asset('asset/dist/js/adminlte.min.js')}}"></script>
+
+</body>
+</html>
+
+@endsection
