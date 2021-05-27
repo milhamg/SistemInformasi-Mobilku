@@ -152,7 +152,7 @@
 							</div>
 						</div>
 						<!-- /SEARCH BAR -->
-
+<br>
 						<!-- ACCOUNT -->
             @if(Auth::user())
               @if(Auth::user()->level == 1)

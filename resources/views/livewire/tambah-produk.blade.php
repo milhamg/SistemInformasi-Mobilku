@@ -1,8 +1,11 @@
+<br><br>
 <div class="container">
+    
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
+                <h3>Tambah Produk</h3>
                     <div class="card-body">
                     
                     <form wire:submit.prevent="store">
@@ -14,15 +17,15 @@
                         <strong>{{ $message }}</strong>
                     </span>
                     @enderror
-
+                    <p></p>
                     <label for="harga" class="col-md-12 col-form-label text-md-left">{{ ('Harga Produk') }}</label>
                     <input id="harga" type="number" class="form-control @error('harga') is-invalid @enderror" wire:model="harga" value="{{ old('harga') }}" required autocomplete="harga" autofocus>
                     @error('harga')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
-                    @enderror
-
+                    @enderror   
+                    <p></p>
                     <label for="berat" class="col-md-12 col-form-label text-md-left">{{ ('Berat Produk') }}</label>
                     <input id="berat" type="number" class="form-control @error('berat') is-invalid @enderror" wire:model="berat" value="{{ old('berat') }}" required autocomplete="berat" autofocus>
                     @error('berat')
@@ -30,18 +33,18 @@
                         <strong>{{ $message }}</strong>
                     </span>
                     @enderror
-
+                    <p></p>
                     <label for="gambar" class="col-md-12 col-form-label text-md-left">{{ ('Gambar Produk (*maks 2 MB)') }}</label>
                     <input id="" type="file" wire:model="gambar">
                     @error('gambar')
                     <span class="error">{{ $message }}</span>
                     @enderror
                     <br><br>
-
+                    <div align="center">
                     <div class="col-md-6">
                         <button type="submit" class="btn btn-success btn-block">Tambah Produk</button>
                     </div>
-
+                    </div>
                     </form>
 
                     </div>

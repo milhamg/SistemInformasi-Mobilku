@@ -11,6 +11,7 @@
  
 </head>
 <body class="hold-transition signup-page">
+<br><br>
 <div class="signup-box">
   <!-- /.signup-logo -->
   <div class="card">
